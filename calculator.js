@@ -35,7 +35,7 @@ function operate(operator,num1,num2) {
     if (operator === '*') {
         retval = multiply(num1,num2);
     };
-    return Math.round(retval * 100) / 100
+    return Math.round(retval * 100) / 100 // limits to two decimal places if necessary
 }
 
 console.log(operate('/',2,3));
