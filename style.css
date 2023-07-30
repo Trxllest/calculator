@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    /* min-height: 100%; */
+    /* position: relative; */
+    align-items: center;
+}
+
+#calculatorFrame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 370px;
+    height: auto;
+    padding: 20px 5px 20px 5px;
+    justify-content: center;
+    background-color: #DFD7BF;
+    border: #3F2305 solid 5px;
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.7);
+}
+
+.display {
+    height: 50px;
+    width: 300px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    background-color: rgb(245, 245, 245, 0.7);
+    border: #3F2305 solid 2px;
+    border-radius: 15px;
+    margin: 5% 0;
+    font-size: x-large;
+}
+
+.clearContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    height: auto;
+    gap: 10px;
+    padding: 12px;
+}
+
+.clearBtn {
+    background-color: #F2EAD3;
+    padding: 5px;
+    width: 100px;
+    height: auto;
+    text-align: center;
+    color: #3F2305;
+    border-radius: 50%;
+    border: #3F2305 solid 1px;
+    font-size: larger;
+    font-weight: 700;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.7);
+}
+
+.clearBtn:hover {
+    background-color: #f3c743;
+}
+
+.buttonsContainer {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    /* border: rgb(63, 35, 5, 0.5) solid 3px; */
+}
+
+.calcBtn {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    background-color: #3F2305;
+    color: #DFD7BF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.7);
+    font-size: larger;
+}
+
+.calcBtn.operator {
+    background-color: rgb(0, 0, 0, 0.7);
+}
+
+.calcBtn.operator:hover {
+    background-color: black;
+}
+
+.calcBtn.numBtn:hover {
+    background-color: rgb(63, 35, 5, 0.8) ;
+}
