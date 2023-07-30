@@ -69,16 +69,17 @@ function operate(operator,num1,num2) {
 for (let btn of numBtns) {
     btn.addEventListener('click', (e) => {
         if (!firstNum) {
-            firstNum = e.textContent;
+            firstNum = e.target.textContent;
             operation = operation + firstNum;
             console.log(firstNum);
             console.log(operation);
         }
     
         if (firstNum && operator) {
-            secondNum = e.textContent;
+            secondNum = e.target.textContent;
             operation = operation + secondNum;
-            console.log();
+            console.log(secondNum);
+            console.log(operation);
         }
     });
 }
@@ -86,7 +87,7 @@ for (let btn of numBtns) {
 for (let op of operatorBtns) {
     op.addEventListener('click', (e) => {
         if (firstNum) {
-            operator = e.textContent;
+            operator = e.target.textContent;
         }
         operation = operation + ` ${operator} `;
         console.log(operation);
@@ -101,7 +102,7 @@ let allClear = function() {
     firstNum = false;
     secondNum = false;
     operator = false;
-    // console.log(firstNum);
+    console.log(firstNum);
 };
 
 allClearBtn.addEventListener('click', allClear);
