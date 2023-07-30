@@ -1,8 +1,8 @@
 //////////////////////////////////////////
 // Global Variables
-let operator = false;
-let firstNum = false;
-let secondNum = false;
+let operator = '';
+let firstNum = '';
+let secondNum = '';
 let operation = '' 
 let numBtns = document.querySelectorAll('.calcBtn.numBtn');
 let display = document.querySelector('.displayContent');
@@ -68,29 +68,30 @@ function operate(operator,num1,num2) {
 
 for (let btn of numBtns) {
     btn.addEventListener('click', (e) => {
-        if (!firstNum) {
-            firstNum = e.target.textContent;
-            operation = operation + firstNum;
+        if (!operator) {
+            firstNum = firstNum + e.target.textContent;
+            operation = firstNum;
             console.log(firstNum);
             console.log(operation);
         }
     
-        if (firstNum && operator) {
+        if (firstNum !== '' && operator) {
             secondNum = e.target.textContent;
             operation = operation + secondNum;
             console.log(secondNum);
             console.log(operation);
         }
+        display.textContent = operation;
     });
 }
 
 for (let op of operatorBtns) {
     op.addEventListener('click', (e) => {
-        if (firstNum) {
+        if (firstNum !== '' && operator === '') {
             operator = e.target.textContent;
+            operation = operation + ` ${operator} `;
         }
-        operation = operation + ` ${operator} `;
-        console.log(operation);
+        display.textContent = operation;
     });
 }
 
@@ -99,9 +100,9 @@ for (let op of operatorBtns) {
 let allClear = function() {
     operation = '';
     display.textContent = operation;
-    firstNum = false;
-    secondNum = false;
-    operator = false;
+    firstNum = '';
+    secondNum = '';
+    operator = '';
     console.log(firstNum);
 };
 
