@@ -82,8 +82,8 @@ for (let btn of numBtns) {
         }
     
         if (firstNum !== '' && operator) {
-            secondNum = e.target.textContent;
-            operation = operation + secondNum;
+            secondNum = secondNum + e.target.textContent;
+            operation = firstNum + ` ${operator} ` + secondNum;
             // console.log(secondNum);
             // console.log(operation);
         }
